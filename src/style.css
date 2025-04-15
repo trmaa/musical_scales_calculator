@@ -38,7 +38,9 @@ p {
     padding: 0;
 }
 
-button {
+button,
+select,
+.keyboard{
 	text-decoration: none;
     cursor: pointer;
 
@@ -57,6 +59,16 @@ button {
 	font-size: 16px;
 }
 
+select,
+.keyboard {
+    background-color: #fff0;
+    color: #112;
+}
+
+.keyboard {
+	border-radius: 15px;
+}
+
 button:hover {
     background-color: #112;
 	color: #ddd;
@@ -64,6 +76,19 @@ button:hover {
     border: 2px solid #fff0;
 }
 
-#grid {}
+.b_remove {
+    background-color: #fff0;
+    color: #112;
+}
 
-#keyboard {}
+.b_remove:hover {
+    background-color: #f02 !important;
+    color: #fff !important;
+}
+
+#keyboards {
+	display: grid;
+    grid-template-column: 1fr;
+    grid-gap: 16px;
+    margin: 0;
+}

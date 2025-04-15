@@ -14,11 +14,19 @@ const app = () => `
 	<button id="b_dark_mode">Dark Mode ${dark_mode ? "ON" : "OFF"}</button>
 </header>
 
-<button id="b_add_scale">+</button>
+<span>
+	<label>Afinació: </label>
+	<select id="b_entonation">
+		<option value="equal">Igual</option>
+		<option value="just">Justa</option>
+	</select>
+	<button id="b_add_scale">+</button>
+	<button id="b_remove" class="b_remove">Netejar</button>
+</span>
 
-<div id="grid"></div>
+<br></br>
 
-<div id="keyboard"></div>
+<div id="keyboards"></div>
 
 `;
 
@@ -32,4 +40,17 @@ function app_init() {
 
 	let b_dark_mode = document.body.querySelector("#b_dark_mode");
 	b_dark_mode.addEventListener("click", toggle_dark_mode);
+
+	let b_remove = document.body.querySelector("#b_remove");
+    b_remove.addEventListener("click", () => {
+        let keyboards = document.body.querySelector("#keyboards");
+        keyboards.innerHTML = "";
+    });
+
+	let keyboards = document.body.querySelector("#keyboards");
+	let b_add_scale = document.body.querySelector("#b_add_scale");
+    b_add_scale.addEventListener("click", () => {
+        let afination = document.body.querySelector("#b_entonation").value;
+        keyboards.innerHTML += keyboard_add(afination);
+    });
 }

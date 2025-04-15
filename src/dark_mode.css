@@ -7,11 +7,35 @@ body {
     color: #ddd;
 }
 
-button {
-	background-color: #ddd;
+button, select, .b_remove {
+    border: 2px solid #ddd;
+	color: #ddd; 
+}
+
+.keyboard {
+    background-color: #ddd;
+    color: #112;
+}
+
+.keyboard * {
     color: #112;
 }
 
 button:hover {
-    border: 2px solid #ddd;
+	background-color: #ddd;
+    color: #112;
+}
+
+.keyboard button:hover {
+    background-color: #112;
+    color: #ddd;
+}
+
+#b_add_scale {
+    background-color: #ddd;
+    color: #112;
+}
+
+#b_add_scale:hover {
+    background-color: #dda;
 }
