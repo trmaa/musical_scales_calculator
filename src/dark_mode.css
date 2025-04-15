@@ -1,0 +1,17 @@
+* {
+	color: #ddd;
+}
+
+body {
+    background-color: #112;
+    color: #ddd;
+}
+
+button {
+	background-color: #ddd;
+    color: #112;
+}
+
+button:hover {
+    border: 2px solid #ddd;
+}
