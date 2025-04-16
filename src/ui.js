@@ -1,6 +1,6 @@
 //import "utilities.js";
 
-let dark_mode = true;
+let dark_mode = false;
 const style = () => {
 	return dark_mode ? "src/dark_mode.css" : "src/light_mode.css"; 
 }
@@ -16,7 +16,7 @@ const app = () => `
 
 <span>
 	<label>Afinació: </label>
-	<select id="b_entonation">
+	<select id="b_intonation">
 		<option value="equal">Igual</option>
 		<option value="just">Justa</option>
 	</select>
@@ -50,7 +50,7 @@ function app_init() {
 	let keyboards = document.body.querySelector("#keyboards");
 	let b_add_scale = document.body.querySelector("#b_add_scale");
     b_add_scale.addEventListener("click", () => {
-        let afination = document.body.querySelector("#b_entonation").value;
+        let afination = document.body.querySelector("#b_intonation").value;
         keyboards.innerHTML += keyboard_add(afination);
     });
 }

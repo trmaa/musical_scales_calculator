@@ -90,5 +90,21 @@ button:hover {
 	display: grid;
     grid-template-column: 1fr;
     grid-gap: 16px;
-    margin: 0;
+    margin: 0; 
+}
+
+.whitekey {
+	border-radius: 15px;
+}
+
+.blackkey {
+    border-radius: 15px;
+
+    background-color: #112;
+    color: #ddd;
+}
+
+.blackkey:hover {
+	background-color: #ddd;
+    color: #112;
 }
