@@ -103,6 +103,10 @@ button:hover {
 .whitekey {
 	border-radius: 10px;
 }
+.whitekey:hover {
+    background-color: #ddd;
+    color: #112;
+}
 
 .blackkey {
     border-radius: 10px;
@@ -110,9 +114,8 @@ button:hover {
     background-color: #112;
     color: #ddd;
 }
-
 .blackkey:hover {
-	background-color: #fff0;
+	background-color: #ddd;
     color: #112;
 }
 
