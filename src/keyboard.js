@@ -104,7 +104,8 @@ function toggle_sustain() {
 // ---------- Keyboard Renderer ----------
 function keyboard_add(intonation) {
 	const freqs = frequencys(intonation);
-	const label = document.querySelector(`#b_intonation option#${intonation}`)?.innerHTML?.toUpperCase() || intonation.toUpperCase();
+	const select = document.querySelector(`#b_intonation`);
+	const label = select.options[select.selectedIndex].textContent.toUpperCase();
 
 	return `
 		<div class="keyboard">

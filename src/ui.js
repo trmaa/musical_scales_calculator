@@ -10,7 +10,7 @@ const app = () => `
 <link rel="stylesheet" href="${style()}">
 
 <header id="header">
-	<h1>ESCALES</h1>
+	<h1>ESCALES <img class="icon" src="bin/icons/music-note.png"></h1>
 	<button id="b_dark_mode">Dark Mode ${dark_mode ? "ON" : "OFF"}</button>
 </header>
 
@@ -32,6 +32,9 @@ const app = () => `
 
 function toggle_dark_mode() {
     dark_mode = !dark_mode;
+
+	if (dark_mode) window.alert("darkmode is still in development");
+
     app_init();
 }
 
