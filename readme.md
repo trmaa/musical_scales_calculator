@@ -1,1 +1,3 @@
+this is an app created for chromebooks. so vanila js, no server...
+
 ![](bin/screenshots/ss.png)
