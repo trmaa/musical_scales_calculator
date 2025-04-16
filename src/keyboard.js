@@ -93,8 +93,10 @@ function stop_all_notes() {
 
 function toggle_sustain() {
 	sustain = !sustain;
-	const btn = document.getElementById("sustain_btn");
-	if (btn) btn.innerText = `Sustain: ${sustain ? "ON" : "OFF"}`;
+	const btns = document.getElementsByClassName("sustain_btn");
+	for (let i = 0; i < btns.length; i++) {	
+		btns[i].textContent = `Sustain: ${sustain ? "ON" : "OFF"}`;
+	}
 
 	if (!sustain) {
 		stop_all_notes();
@@ -127,7 +129,7 @@ function keyboard_add(intonation) {
 				}).join("")}
 			</div>
 			<br>
-			<button onclick="toggle_sustain()" id="sustain_btn">Sustain: ${sustain ? "ON" : "OFF"}</button>
+			<button onclick="toggle_sustain()" class="sustain_btn">Sustain: ${sustain ? "ON" : "OFF"}</button>
 		</div>
 	`;
 }
