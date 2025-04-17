@@ -1,6 +1,11 @@
+:root {
+	--white: #ddd;
+    --black: #223;
+}
+
 * {
 	transition: all 0.2s ease-in-out;
-	color: #112;
+	color: var(--black);
 
 	background-color: #fff0;
 }
@@ -31,7 +36,7 @@ h1 {
 }
 h2 {
     margin: 0;
-    padding: 0;
+    padding: 16px;
 
 	font-weight: bold;
 }
@@ -63,7 +68,7 @@ button,
 select,
 .keyboard {
     background-color: #fff0;
-    color: #112;
+    color: var(--black);
 }
 
 .keyboard {
@@ -73,19 +78,19 @@ select,
 
 .keyboard:hover {
     box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
-	border: 2px solid #112;
+	border: 2px solid var(--black);
 }
 
 button:hover {
-    background-color: #112;
-	color: #ddd;
+    background-color: var(--black);
+	color: var(--white);
 	
     border: 2px solid #fff0;
 }
 
 .b_remove {
     background-color: #fff0;
-    color: #112;
+    color: var(--black);
 }
 
 .b_remove:hover {
@@ -104,19 +109,19 @@ button:hover {
 	border-radius: 10px;
 }
 .whitekey:hover {
-    background-color: #ddd;
-    color: #112;
+    background-color: var(--white);
+    color: var(--black);
 }
 
 .blackkey {
     border-radius: 10px;
 
-    background-color: #112;
-    color: #ddd;
+    background-color: var(--black);
+    color: var(--white);
 }
 .blackkey:hover {
-	background-color: #ddd;
-    color: #112;
+	background-color: var(--white);
+    color: var(--black);
 }
 
 select {
@@ -143,7 +148,7 @@ select:hover {
     border-radius: 0;
     border: none;
 
-    color: white;
+    color: black;
 
     width: 40px;
     height: 40px;
@@ -155,4 +160,20 @@ select:hover {
 	grid-template-rows: 1fr 1fr;
     grid-gap: 8px;
     margin: 0;
+}
+
+.keyb_contr {
+	display: grid;
+    grid-template-columns: 15fr 1fr;
+    grid-gap: 8px;
+    margin: 0;
+	padding: 0;
+
+	width: 100%;
+}
+
+.controller {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }

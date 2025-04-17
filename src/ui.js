@@ -47,14 +47,54 @@ function app_init() {
 
 	let b_remove = document.body.querySelector("#b_remove");
     b_remove.addEventListener("click", () => {
-        let keyboards = document.body.querySelector("#keyboards");
-        keyboards.innerHTML = "";
+    	app_init(); 
     });
 
 	let keyboards = document.body.querySelector("#keyboards");
 	let b_add_scale = document.body.querySelector("#b_add_scale");
-    b_add_scale.addEventListener("click", () => {
-        let afination = document.body.querySelector("#b_intonation").value;
-        keyboards.innerHTML += keyboard_add(afination);
-    });
+
+	let keyboards_body = [];
+	let keyboards_controller = `
+		<div class="controller">
+			<button class="b_up">^</button>
+			<button class="b_down">v</button>
+			<button class="b_del b_remove">Borrar</button>
+		</div>
+	`;
+
+	function render_keyboards() {
+		keyboards.innerHTML = "";
+		keyboards_body.forEach((item, i) => {
+			let container = document.createElement("div");
+			container.className = "keyb_contr";
+			container.innerHTML = item + keyboards_controller;
+
+			container.querySelector(".b_up").addEventListener("click", () => {
+				if (i > 0) {
+					[keyboards_body[i], keyboards_body[i - 1]] = [keyboards_body[i - 1], keyboards_body[i]];
+					render_keyboards();
+				}
+			});
+
+			container.querySelector(".b_down").addEventListener("click", () => {
+				if (i < keyboards_body.length - 1) {
+					[keyboards_body[i], keyboards_body[i + 1]] = [keyboards_body[i + 1], keyboards_body[i]];
+					render_keyboards();
+				}
+			});
+
+			container.querySelector(".b_del").addEventListener("click", () => {
+				keyboards_body.splice(i, 1);
+				render_keyboards();
+			});
+
+			keyboards.appendChild(container);
+		});
+	}
+
+	b_add_scale.addEventListener("click", () => {
+		let afination = document.body.querySelector("#b_intonation").value;
+		keyboards_body.push(keyboard_add(afination));
+		render_keyboards();
+	});
 }

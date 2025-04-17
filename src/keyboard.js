@@ -37,7 +37,7 @@ const white_frequencuys = (intonation) => {
 		}
 	}
 
-	return freqs.map(freq => +freq.toFixed(2));
+	return freqs.map(freq => +freq.toFixed(0));
 };
 
 const black_frequencuys = (intonation) => {
@@ -73,7 +73,7 @@ const black_frequencuys = (intonation) => {
 		}
 	}
 
-	return freqs.map(freq => +freq.toFixed(2));
+	return freqs.map(freq => +freq.toFixed(0));
 };
 
 // ---------- Audio Playback ----------
