@@ -12,7 +12,7 @@ const app = () => `
 
 <header id="header">
 	<h1>ESCALES <img class="icon" src="bin/icons/music-note.png"></h1>
-	<button id="b_dark_mode">Dark Mode ${dark_mode ? "ON" : "OFF"}</button>
+	<button id="b_dark_mode"><img class="icon-little" src="bin/icons/night-mode.png" /> ${dark_mode ? "ON" : "OFF"}</button>
 </header>
 
 <span>
@@ -22,7 +22,7 @@ const app = () => `
 		<option value="just">Justa</option>
 	</select>
 	<button id="b_add_scale">+</button>
-	<button id="b_remove" class="b_remove">Netejar</button>
+	<button id="b_remove" class="b_remove"><img class="icon-little" src="bin/icons/broom.png" /></button>
 </span>
 
 <br></br>
@@ -56,9 +56,9 @@ function app_init() {
 	let keyboards_body = [];
 	let keyboards_controller = `
 		<div class="controller">
-			<button class="b_up">^</button>
-			<button class="b_down">v</button>
-			<button class="b_del b_remove">Borrar</button>
+			<button class="b_up"><img class="icon-little" src="bin/icons/up_arrow.png" /></button>
+			<button class="b_down"><img class="icon-little" src="bin/icons/down_arrow.png" /></button>
+			<button class="b_del b_remove"><img class="icon-little" src="bin/icons/bin.png" /></button>
 		</div>
 	`;
 
